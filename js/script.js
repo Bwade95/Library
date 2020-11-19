@@ -7,24 +7,19 @@ closeModal.addEventListener('click', () => bookInfoWrapper.style.display = "none
 const bookInfoWrapper = document.querySelector('#book-info-wrapper');
 
 class Book {
-    constructor(title = '', author = '', totalPages = 0, pagesRead = 0, completed = false) {
-        this.title = title;
-        this.author = author;
-        this.totalPages = totalPages;
-        this.pagesRead = pagesRead;
-        this.completed = completed;
+    constructor(title, author) {
+        this.title = form.title.value;
+        this.author = form.author.value;
     }
 }
 
-let myLibrary = ["this is the end", "world war z", "go fuck yourself"]
+let myLibrary = [];
 
 function addBookToLibrary() {
-    var f = document.createElement("form");
-    f.setAttribute('method',"post");
-    f.setAttribute('action', "submit.php");
+    let newBook = new Book(title, author);
+    myLibrary.push(newBook);
+    console.log(myLibrary);
 }
 
-function clickTest() {
-    alert("I have been clicked.");
-}
+
 

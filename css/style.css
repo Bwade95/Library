@@ -1,5 +1,6 @@
 html {
     background-color: #333;
+    font-family: 'Raleway', sans-serif;
 }
 
 h1 {
@@ -46,22 +47,25 @@ h1 {
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
-    font-size: 30px;
+    color: #EEFBFB;
 }
 
 #book-info {
-    background-color: #fefefe;
+    background-color: #12232E;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     border-radius: 0.3pc;
-    width: 20%
+    width: 20%;
 }
 
 #close {
     display: flex;
     float: right;
-    background: pink;
+    width: 25px;
+    height: 25px;
+    border-radius: 0.3pc;
+    background: rgb(148, 28, 48);
 }
 
 #close:hover {
@@ -69,7 +73,29 @@ h1 {
     color: gray;
 }
 
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
 
-#book-p {
-    color: black;
+input[type=text], input[type=submit] {
+    width: 100%;
+    margin: 8px 0;
+    padding: 14px 20px;
+}
+
+input[type=text] {
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    border: none;
+    border-radius: 3px;
+    color: white;
+    background-color: #203647;
+}
+
+input[type=submit]:hover {
+    cursor: pointer; 
+    color: gray;   
 }
