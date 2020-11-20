@@ -1,7 +1,7 @@
 const addBook = document.querySelector('.addBook');
 addBook.addEventListener('click', () => bookInfoWrapper.style.display = "block");
 
-const closeModal = document.querySelector('.close');
+const closeModal = document.querySelector('.close-container');
 closeModal.addEventListener('click', () => bookInfoWrapper.style.display = "none");
 
 const bookInfoWrapper = document.querySelector('#book-info-wrapper');
