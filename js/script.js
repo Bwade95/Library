@@ -16,10 +16,12 @@ class Book {
 }
 
 let myLibrary = [];
+let newBook;
 
 function addBookToLibrary() {
-    let newBook = new Book(title, author);
+    newBook = new Book(title, author);
     myLibrary.push(newBook);
+    createBook(myLibrary);
 }
 
 // Creates web-card storing book information
@@ -33,23 +35,28 @@ function createBook(item) {
     const bookDiv = document.createElement('div');
     bookDiv.classList.add('book');
     bookDiv.setAttribute('id', myLibrary.indexOf(item));
+    library.appendChild(bookDiv);
 
     // Stores styling and content of book title
     const titleDiv = document.createElement('div');
     titleDiv.classList.add('title');
+    bookDiv.appendChild(titleDiv);
 
     // Stores styling and content of book author
     const authorDiv = document.createElement('div');
     authorDiv.classList.add('author');
+    bookDiv.appendChild(authorDiv);
 
     // Stores styling and content of remove button
     const removeBtn = document.createElement('button');
     removeBtn.classList.add('remove-button');
+    bookDiv.appendChild(removeBtn);
 
     // Stores styling and content of book completion checker
     const bookRead = document.createElement('input');
     bookRead.classList.add('book-read');
     bookRead.setAttribute('type', 'radio');
+    bookDiv.appendChild(bookRead);
 }
 
 
