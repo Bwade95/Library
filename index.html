@@ -1,51 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
   <title>Library</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/book.png">
-
 </head>
 <body>
-
-  <!-- Primary Page Layout -->
-  <div class="header">
-    <h1 id="main-text">Library</h1>
-  </div>
+  <!-- Stores header banner -->
+  <header>
+    <div class="header">
+      <h1 id="main-text">Library</h1>
+    </div>
+  </header>
   <div class="library-catalogue">
-    <span class="addBook">Add Book</span>
+      <button class="addBook">Add Book</button>
   </div>
-
   <!-- Modal Pop-up for book information -->
   <div id="book-info-wrapper" style="display: none">
     <div id="book-info">
       <header class="modal-header">
         <h2>Add Book</h2>
-        <div class="close-container top-right">
-          <div class="leftright middle"></div>
-          <div class="rightleft middle"></div>
-      </div> 
+        <span onclick="document.getElementById('book-info-wrapper').style.display='none'" 
+        class="close-button top-right">x</span>
       </header>
       <form id="form">
         <label for="book-title">Title</label>
@@ -58,6 +45,5 @@
 
   </div>
   <script src="js/script.js"></script>
-<!-- End Document -->
 </body>
 </html>

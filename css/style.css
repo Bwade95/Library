@@ -14,23 +14,36 @@ html {
 }
 
 h1 {
-    font-weight: bold;
-    text-align: left;
+    font-size: 48px;
+    font-weight: bolder;
+    text-align: center;
     padding: 50px;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: bolder;
 }
 
 .header {
     background-color: #121212;
-    height: 100%
+    width: 100%;
+}
+
+.library-catalogue {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
 }
 
 .addBook {
-    color: #222;
+    color: var(--shadow-light-blue);
     font-weight: bold;
     margin: 1rem;
     padding: 1rem;
-    background-color: var(--light-bg-color);
-    border-color: #222;
+    background-color: rgb(0,0,0,0.4);
+    border: solid;
+    border-color: #eefbfb;
     border-width: 2px;
     border-radius: .5rem;
 }
@@ -41,53 +54,36 @@ h1 {
     border-width: 3px;
 }
 
-.close-container{
+.modal-header {
+    margin-bottom: 20px;
+}
+
+.close-button{
     border: none;
     display: inline-block;
-    padding: 8px 16px;
-    vertical-align: middle;
     overflow: hidden;
+    padding: 8px 14px;
     text-decoration: none;
+    font-size: 18px;
     color: inherit;
-    background-color: inherit;
+    background-color: rgb(107, 35, 35);
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    cursor: pointer;
     white-space: nowrap;
-    width: 50px;
-    height: 50px;
-    margin-top: 10px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.close-button:hover {
+    cursor: pointer;
+    background-color: red;
 }
 
 .top-right {
     position: absolute;
     right: 0;
     top: 0
-}
-
-.leftright {
-    height: 4px;
-    width: 30px;
-    margin-top: 5px;
-    position: absolute;
-    background-color: red;
-    border-radius: 2px;
-    transform: rotate(45deg);
-    transition: all .3s ease-in;
-}
-
-.rightleft {
-    height: 4px;
-    width: 30px;
-    margin-top: 5px;
-    position: absolute;
-    background-color: red;
-    border-radius: 2px;
-    transform: rotate(-45deg);
-    transition: all .3s ease-in;
-}
-
-.middle {
-    align-items: center;
 }
 
 
