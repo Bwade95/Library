@@ -21,15 +21,26 @@ let newBook;
 function addBookToLibrary() {
     newBook = new Book(title, author);
     myLibrary.push(newBook);
-    createBook(myLibrary);
+    render();
+}
+
+function render() {
+    const display = document.getElementById('book-container');
+    const books = document.querySelectorAll('.book');
+    books.forEach(book => display.removeChild(book));
+
+    for(let i=0; i<myLibrary.length; i++) {
+        createBook(myLibrary[i]);
+    }
 }
 
 // Creates web-card storing book information
 function createBook(item) {
 
     // div for card holding book info
-    const library = document.createElement('div');
-    library.classList.add('book-container');
+    const libraryDiv = document.createElement('div');
+    libraryDiv.classList.add('book-container');
+    library = document.querySelector('.book-container');
     
     // Stores styling and content of entire book
     const bookDiv = document.createElement('div');
