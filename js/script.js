@@ -1,4 +1,4 @@
-const addBook = document.querySelector('.addBook');
+const addBook = document.querySelector('.add-book-btn');
 addBook.addEventListener('click', () => bookInfoWrapper.style.display = "block");
 
 const bookInfoWrapper = document.querySelector('#book-info-wrapper');
