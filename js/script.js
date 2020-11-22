@@ -19,19 +19,22 @@ class Book {
 }
 
 let myLibrary = [];
-let newBook;
 
 function addBookToLibrary() {
     event.preventDefault();
-    newBook = new Book(title, author);
+    bookInfoWrapper.style.display = "none";
+
+    let newBook = new Book(title, author);
     myLibrary.push(newBook);
 
-    const display = document.getElementById('Library-catalogue');
+    const display = document.getElementById('library-catalogue');
     const books = document.querySelectorAll(".book");
+    console.log(books)
     books.forEach(book => display.removeChild(book));
-    
+    console.log(books)
+
     for(let i=0; i<myLibrary.length; i++) {
-        console.log(createBook(myLibrary[i]));
+        createBook(myLibrary[i]);
     }
     form.reset();
 }
