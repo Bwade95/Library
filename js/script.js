@@ -15,6 +15,8 @@ class Book {
     constructor() {
         this.title = form.title.value;
         this.author = form.author.value;
+        this.pages = form.pages.value;
+        this.finished = form.finished.checked;
     }
 }
 
@@ -24,7 +26,7 @@ function addBookToLibrary() {
     event.preventDefault();
     bookInfoWrapper.style.display = "none";
 
-    let newBook = new Book(title, author);
+    let newBook = new Book(title, author, pages, finished);
     myLibrary.push(newBook);
 
     const display = document.getElementById('library-catalogue');
@@ -51,16 +53,30 @@ function createBook(item) {
 
     // Stores styling and content of book title
     const titleDiv = document.createElement('div');
-    titleDiv.textContent = item.title;
+    titleDiv.textContent = "Title: " + item.title;
     titleDiv.classList.add('title');
     bookDiv.appendChild(titleDiv);
     console.log(titleDiv.textContent);
 
     // Stores styling and content of book author
     const authorDiv = document.createElement('div');
-    authorDiv.textContent = item.author;
+    authorDiv.textContent = "Author: " + item.author;
     authorDiv.classList.add('author');
     bookDiv.appendChild(authorDiv);
+
+    const pagesDiv = document.createElement('div');
+    pagesDiv.textContent = "Pages: " + item.pages;
+    pagesDiv.classList.add('pages');
+    bookDiv.appendChild(pagesDiv);
+
+    const finishedDiv = document.createElement('div');
+    finishedDiv.classList.add('finished-checkbox');
+    bookDiv.appendChild(finishedDiv);
+    if(item.finished===false) {
+        finishedDiv.textContent = "Not Finished";
+    } else {
+        finishedDiv.textContent = 'Finished';
+    }
 
     library.appendChild(bookDiv);
 }
