@@ -38,7 +38,7 @@ h2 {
     margin-bottom: 40px;
 }
 
-.new-book-btn {
+.new-book-btn, .book {
     color: var(--shadow-light-blue);
     font-weight: bold;
     margin: 1rem;
@@ -91,8 +91,8 @@ h2 {
 .book {
     display: flex;
     flex-direction: column;
-    height: 300px;
-    width: 250px;
+    height: 150px;
+    width: 200px;
     padding: 15px;
 }
 
