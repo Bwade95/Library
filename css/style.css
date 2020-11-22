@@ -38,7 +38,7 @@ h2 {
     margin-bottom: 40px;
 }
 
-.add-book-btn {
+.new-book-btn {
     color: var(--shadow-light-blue);
     font-weight: bold;
     margin: 1rem;
@@ -50,7 +50,7 @@ h2 {
     border-radius: .5rem;
 }
 
-.add-book-btn:hover {
+.new-book-btn:hover {
     cursor: pointer;
     border-color: #aaa;
     border-width: 3px;
@@ -137,7 +137,7 @@ label {
     font-weight: bold;
 }
 
-input[type=text], input[type=submit] {
+input[type=text], .add-book-btn {
     width: 100%;
     margin: 8px 0;
     padding: 14px 20px;
@@ -147,14 +147,14 @@ input[type=text] {
     box-sizing: border-box;
 }
 
-input[type=submit] {
+.add-book-btn {
     border: none;
     border-radius: 3px;
     color: white;
     background-color: var(--shadow-dark-blue);
 }
 
-input[type=submit]:hover {
+.add-book-btn:hover {
     cursor: pointer; 
     color: gray;   
 }

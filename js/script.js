@@ -1,5 +1,5 @@
-const addBook = document.querySelector('.add-book-btn');
-addBook.addEventListener('click', () => bookInfoWrapper.style.display = "block");
+const newBookBtn = document.querySelector('.new-book-btn');
+newBookBtn.addEventListener('click', () => bookInfoWrapper.style.display = "block");
 
 const bookInfoWrapper = document.querySelector('#book-info-wrapper');
 window.onclick = function(event) {
@@ -7,6 +7,9 @@ window.onclick = function(event) {
         bookInfoWrapper.style.display = "none";
     }
 }
+
+const addBookBtn = document.querySelector(".add-book-btn");
+addBookBtn.addEventListener('click', addBookToLibrary);
 
 class Book {
     constructor() {
@@ -19,20 +22,18 @@ let myLibrary = [];
 let newBook;
 
 function addBookToLibrary() {
+    event.preventDefault();
     newBook = new Book(title, author);
     myLibrary.push(newBook);
-    render();
-    form.reset();
-}
 
-function render() {
-    const display = document.getElementById('library-catalogue');
-    const books = document.querySelectorAll('.book');
+    const display = document.getElementById('Library-catalogue');
+    const books = document.querySelectorAll(".book");
     books.forEach(book => display.removeChild(book));
-
+    
     for(let i=0; i<myLibrary.length; i++) {
-        createBook(myLibrary[i]);
+        console.log(createBook(myLibrary[i]));
     }
+    form.reset();
 }
 
 // Creates web-card storing book information
