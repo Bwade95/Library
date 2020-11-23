@@ -69,13 +69,13 @@ function createBook(item) {
     pagesDiv.classList.add('pages');
     bookDiv.appendChild(pagesDiv);
 
-    const finishedDiv = document.createElement('div');
-    finishedDiv.classList.add('finished-checkbox');
-    bookDiv.appendChild(finishedDiv);
+    const finishedBtn = document.createElement('button');
+    finishedBtn.classList.add('finished-btn');
+    bookDiv.appendChild(finishedBtn);
     if(item.finished===false) {
-        finishedDiv.textContent = "Not Finished";
+        finishedBtn.textContent = "Not Finished";
     } else {
-        finishedDiv.textContent = 'Finished';
+        finishedBtn.textContent = 'Finished';
     }
 
     library.appendChild(bookDiv);
