@@ -128,6 +128,11 @@ input[type=text], input[type=number], input[type=checkbox] {
     color: gray;   
 }
 
+.finished-btn {
+    color: var(--shadow-light-blue);
+    background-color: var(--dark-blue);
+}
+
 #test-close {
     color: white;
     font-size: .6em;
