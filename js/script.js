@@ -29,16 +29,18 @@ function addBookToLibrary() {
     let newBook = new Book(title, author, pages, finished);
     myLibrary.push(newBook);
 
+    display();
+    form.reset();
+}
+
+function display() {
     const display = document.getElementById('library-catalogue');
     const books = document.querySelectorAll(".book");
-    console.log(books)
     books.forEach(book => display.removeChild(book));
-    console.log(books)
 
     for(let i=0; i<myLibrary.length; i++) {
         createBook(myLibrary[i]);
     }
-    form.reset();
 }
 
 // Creates web-card storing book information
@@ -79,6 +81,16 @@ function createBook(item) {
     }
 
     library.appendChild(bookDiv);
+
+    removeBtn.addEventListener('click', () => {
+        myLibrary.splice(myLibrary.indexOf(item),1);
+        display();
+    })
+
+    finishedBtn.addEventListener('click', () => {
+        item.finished = !item.finished
+        display();
+    })
 }
 
 
