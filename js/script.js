@@ -81,6 +81,7 @@ function createBook(item) {
     const removeBtn = document.createElement('button');
     removeBtn.classList.add('remove-btn');
     bookDiv.append(removeBtn);
+    removeBtn.textContent = "Remove";
 
     library.appendChild(bookDiv);
     
