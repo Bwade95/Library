@@ -45,22 +45,20 @@ function display() {
 
 // Creates web-card storing book information
 function createBook(item) {
-    // div for card holding book info
+    // Creates divs and elements for book info
     library = document.querySelector('#library-catalogue');
     
-    // Stores styling and content of entire book
+
     const bookDiv = document.createElement('div');
     bookDiv.classList.add('book');
     bookDiv.setAttribute('id', myLibrary.indexOf(item));
 
-    // Stores styling and content of book title
     const titleDiv = document.createElement('div');
     titleDiv.textContent = "Title: " + item.title;
     titleDiv.classList.add('title');
     bookDiv.appendChild(titleDiv);
     console.log(titleDiv.textContent);
 
-    // Stores styling and content of book author
     const authorDiv = document.createElement('div');
     authorDiv.textContent = "Author: " + item.author;
     authorDiv.classList.add('author');
@@ -80,15 +78,19 @@ function createBook(item) {
         finishedBtn.textContent = 'Finished';
     }
 
+    const removeBtn = document.createElement('button');
+    removeBtn.classList.add('remove-btn');
+    bookDiv.append(removeBtn);
+
     library.appendChild(bookDiv);
-
-    removeBtn.addEventListener('click', () => {
-        myLibrary.splice(myLibrary.indexOf(item),1);
-        display();
-    })
-
+    
     finishedBtn.addEventListener('click', () => {
         item.finished = !item.finished
+        display();
+    })
+    
+    removeBtn.addEventListener('click', () => {
+        myLibrary.splice(myLibrary.indexOf(item),1);
         display();
     })
 }
