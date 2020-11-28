@@ -20,26 +20,26 @@ class Book {
     }
 }
 
-let myLibrary = [];
+let bookLibrary = [];
 
 function addBookToLibrary() {
     event.preventDefault();
-    bookInfoWrapper.style.display = "none";
 
     let newBook = new Book(title, author, pages, finished);
-    myLibrary.push(newBook);
+    bookLibrary.push(newBook);
 
-    display();
+    storeData();
+    updateDisplay();
     form.reset();
 }
 
-function display() {
+function updateDisplay() {
     const display = document.getElementById('library-catalogue');
     const books = document.querySelectorAll(".book");
     books.forEach(book => display.removeChild(book));
 
-    for(let i=0; i<myLibrary.length; i++) {
-        createBook(myLibrary[i]);
+    for(let i=0; i<bookLibrary.length; i++) {
+        createBook(bookLibrary[i]);
     }
 }
 
@@ -51,7 +51,7 @@ function createBook(item) {
 
     const bookDiv = document.createElement('div');
     bookDiv.classList.add('book');
-    bookDiv.setAttribute('id', myLibrary.indexOf(item));
+    bookDiv.setAttribute('id', bookLibrary.indexOf(item));
 
     const titleDiv = document.createElement('div');
     titleDiv.textContent = "Title: " + item.title;
@@ -87,13 +87,33 @@ function createBook(item) {
     
     finishedBtn.addEventListener('click', () => {
         item.finished = !item.finished
-        display();
+        updateDisplay();
     })
     
     removeBtn.addEventListener('click', () => {
-        myLibrary.splice(myLibrary.indexOf(item),1);
-        display();
+        bookLibrary.splice(bookLibrary.indexOf(item),1);
+        updateDisplay();
     })
 }
 
+function storeData() {
+    localStorage.setItem('Library', JSON.stringify(bookLibrary));
+}
+
+function recoverData() {
+    if (!localStorage.bookLibrary) {
+        updateDisplay();
+    } else {
+        let objects = JSON.parse(localStorage.getItem('Library'));
+        bookLibrary = objects;
+        console.log(bookLibrary);
+        updateDisplay();
+    }
+}
+
+function closeModal() {
+    bookInfoWrapper.style.display = "none";
+}
+
+recoverData();
 

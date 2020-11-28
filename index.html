@@ -32,8 +32,7 @@
     <div id="book-info">
       <header class="modal-header">
         <h2>Add Book</h2>
-        <span onclick="document.getElementById('book-info-wrapper').style.display='none'" 
-        class="close-button top-right">x</span>
+        <span class="close-button top-right" onclick="closeModal()">x</span>
       </header>
       <form id="form">
         <label for="book-title">Title</label>
@@ -44,7 +43,7 @@
         <input type="number" id="pages">
         <label for="book-read">Finished</label>
         <input type="checkbox" id="finished">      
-        <button type="submit" class="add-book-btn">Add Book</button>
+        <button type="submit" class="add-book-btn" onclick="closeModal()">Add Book</button>
       </form>
     </div>
   </div>
