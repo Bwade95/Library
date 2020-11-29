@@ -1,4 +1,4 @@
-# Library TOP
+# Library The Odin Project (TOP)
 ## A HTML,CSS,JS based simple library webpage
 
 A project from The Odin Project that allows users to input books that include their; Title, Author, Pages, and whether or not the user has finished the book.
@@ -11,4 +11,4 @@ I'm aiming to implement proper function of local storage so that when users retu
 I'm also aiming to use firebase so that users can save their book cards onto the cloud, so when they access the webpage they can sign in and it will look through
 the cloud for their books.
 
-Live Demo: 
+Live Demo: https://bwade95.github.io/Library/
