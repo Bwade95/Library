@@ -1,7 +1,7 @@
-# Library The Odin Project (TOP)
+# Library
 ## A HTML,CSS,JS based simple library webpage
 
-A project from The Odin Project that allows users to input books that include their; Title, Author, Pages, and whether or not the user has finished the book.
+Allows users to input books that include their; Title, Author, Pages, and whether or not the user has finished the book.
 After users have input their book details the book is then stored on the webpage. Users can add multiple book and by clicking on the finished button
 after submitting the book, users can switch between finished and not finished. They can also remove an added book by clicking the remove button.
 
